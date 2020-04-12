@@ -1,0 +1,184 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: linear-gradient(to left, hsl(204, 8%, 76%), hsl(210, 29%, 24%));
+  overflow: hidden;
+}
+
+.clock {
+  width: 440px;
+  margin: 5% auto 0 auto;
+}
+
+#clockframe {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: 10px solid #000;
+  border-radius: 50%;
+  background-color: rgba(218, 218, 218, 0.8);
+  box-shadow: 0 0 2px 2px #fff;
+}
+
+.minutes {
+  position: absolute;
+  background-color: #bbb;
+  height: 5px;
+  width: 5px;
+  top: 0;
+  left: 198px;
+  border-radius: 0 0 50% 50%;
+}
+
+.fiveminutes {
+  position: absolute;
+  background-color: #000;
+  height: 6px;
+  width: 5px;
+  top: 0;
+  left: 198px;
+  border-radius: 0 0 50% 50%;
+}
+
+.centerpoint {
+  position: absolute;
+  background-color: #000;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  left: 190px;
+  top: 190px;
+}
+
+.hour {
+  position: absolute;
+  background-color: #000;
+  border-radius: 70% 70% 0 0;
+  top: 100px;
+  left: 48.5%;
+  width: 13px;
+  height: 100px;
+  transform-origin: 48.5% 100px;
+}
+
+.min {
+  position: absolute;
+  background-color: #000;
+  border-radius: 70% 70% 0 0;
+  top: 60px;
+  left: 49.3%;
+  width: 7px;
+  height: 140px;
+  transform-origin: 49.3% 140px;
+}
+
+.sec {
+  position: absolute;
+  background-color: #f00;
+  border-radius: 70% 70% 0 0;
+  top: 60px;
+  left: 49.5%;
+  width: 4px;
+  height: 140px;
+  transform-origin: 49.5% 140px;
+}
+
+/*Position numbers on the clock by setting 
+.number class to full size
+of a #clockframe id and then 
+position each number with --rotation variable*/
+.number {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 26px;
+  text-align: center;
+  transform: rotate(var(--rotation));
+}
+
+.one {
+  --rotation: 30deg;
+}
+.two {
+  --rotation: 60deg;
+}
+.three {
+  --rotation: 90deg;
+  font-size: 29px;
+  font-weight: bold;
+}
+.four {
+  --rotation: 120deg;
+}
+.five {
+  --rotation: 150deg;
+}
+.six {
+  --rotation: 180deg;
+  font-size: 29px;
+  font-weight: bold;
+}
+.seven {
+  --rotation: 210deg;
+}
+.eight {
+  --rotation: 240deg;
+}
+.nine {
+  --rotation: 270deg;
+  font-size: 29px;
+  font-weight: bold;
+}
+.ten {
+  --rotation: 300deg;
+}
+.eleven {
+  --rotation: 330deg;
+}
+.twelve {
+  --rotation: 0deg;
+  font-size: 29px;
+  font-weight: bold;
+}
+
+/*Rotate numbers so every number is vertical*/
+.num-rotate {
+  transform: rotate(var(--rotatenum));
+}
+.num1 {
+  --rotatenum: -30deg;
+}
+.num2 {
+  --rotatenum: -60deg;
+}
+.num3 {
+  --rotatenum: -90deg;
+}
+.num4 {
+  --rotatenum: -120deg;
+}
+.num5 {
+  --rotatenum: -150deg;
+}
+.num6 {
+  --rotatenum: -180deg;
+}
+.num7 {
+  --rotatenum: -210deg;
+}
+.num8 {
+  --rotatenum: -240deg;
+}
+.num9 {
+  --rotatenum: -270deg;
+}
+.num10 {
+  --rotatenum: -300deg;
+}
+.num11 {
+  --rotatenum: -330deg;
+}
+.num12 {
+  --rotatenum: 0deg;
+}
