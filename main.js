@@ -22,20 +22,40 @@ let hourHand = document.querySelector('.hour');
 let minuteHand = document.querySelector('.min');
 let secondHand = document.querySelector('.sec');
 
+let speechSynth = window.speechSynthesis;
+let speaker = document.querySelector('.fa-volume-up');
+
+// decalring variables outside of the function for easier use later in code
+let hours, minutes, seconds;
 // this function will give animation to our clock hands depending on the current time set by the Date object
 function setTime() {
-  let time = new Date();
+  const time = new Date();
 
-  let hours = time.getHours();
-  hourHand.style.transform = `rotate(${hours * 30}deg)`;
-
-  let minutes = time.getMinutes();
-  minuteHand.style.transform = `rotate(${minutes * 6}deg)`;
-
-  let seconds = time.getSeconds();
+  /* it goes in order seconds < minutes < hours 
+  because we want to make calculations with each time propery
+  and we can't do that unless each property is created before called */
+  seconds = time.getSeconds();
   secondHand.style.transform = `rotate(${seconds * 6}deg)`;
   secondHand.style.transition = 'transform 0.5s';
+
+  minutes = time.getMinutes();
+  minuteHand.style.transform = `rotate(${
+    ((minutes + seconds / 60) / 60) * 360
+  }deg)`;
+
+  hours = time.getHours();
+  hourHand.style.transform = `rotate(${
+    ((hours + minutes / 60) / 12) * 360
+  }deg)`;
 }
+
+// on click this function uses Web Speech API to output voice data on text input
+speaker.onclick = function () {
+  let currentTime = new SpeechSynthesisUtterance(
+    `Current time is ${hours} ${minutes}`
+  );
+  speechSynth.speak(currentTime);
+};
 
 cloneTicks();
 // setInterval will call setTime function every second

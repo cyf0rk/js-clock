@@ -8,6 +8,7 @@ body {
 
 .clock {
   width: 440px;
+  height: 600px;
   margin: 5% auto 0 auto;
 }
 
@@ -195,4 +196,18 @@ position each number with --rotation variable*/
 }
 .num12 {
   --rotatenum: 0deg;
+}
+
+/* Speech effect button*/
+#speaker {
+  position: relative;
+  color: aqua;
+  margin-top: 15px;
+  left: 44%;
+  bottom: 0%;
+}
+
+.fa-volume-up:hover {
+  cursor: pointer;
+  color: red;
 }
