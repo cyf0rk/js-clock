@@ -21,6 +21,7 @@ body {
   box-shadow: 0 0 2px 2px #fff;
 }
 
+/* 1 minute and 5 minute tick marks*/
 .minutes {
   position: absolute;
   background-color: #bbb;
@@ -51,6 +52,7 @@ body {
   top: 190px;
 }
 
+/* 3 clock sticks: hour, minute and second*/
 .hour {
   position: absolute;
   background-color: #000;
