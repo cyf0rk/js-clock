@@ -21,10 +21,22 @@ body {
   box-shadow: 0 0 2px 2px #fff;
 }
 
-/* 1 minute and 5 minute tick marks*/
+/* 1 minute and 5 minute tick marks and center*/
+.minclock {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.fiveminclock {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 .minutes {
   position: absolute;
-  background-color: #bbb;
+  background-color: rgb(104, 104, 104);
   height: 5px;
   width: 5px;
   top: 0;
